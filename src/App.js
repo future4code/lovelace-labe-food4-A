@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import Header from "./components/Header"
 
 const App = () => {
+  return(
+ 
 
   const token = localStorage.getItem("token")
   const [rightButtonText, setRightButtonText] = useState(token ? "Logout" : "Login")
@@ -16,6 +18,7 @@ const App = () => {
         <Header rightButtonText={rightButtonText} setRightButtonText={setRightButtonText} />
         <Router setRightButtonText={setRightButtonText}/>
       </BrowserRouter>
+   <Router />
     </ThemeProvider>
   )
 }
