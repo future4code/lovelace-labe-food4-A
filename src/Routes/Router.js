@@ -1,18 +1,19 @@
 import React from 'react'
 import { BrowserRouter, Switch , Route } from 'react-router-dom'
 import Home from '../Pages/Home/Home'
-import SignUp from '../Pages/SignUp/SignUp'
+import SignUp from '../Pages/SignUp/SignUpForm'
 import Filtro from '../Pages/Filtro/Filtro'
 import Resultado from '../Pages/Resultado/Resultado'
 import Carrinho from '../Pages/Carrinho/Carrinho'
 import MeuPerfil from '../Pages/MeuPerfil/MeuPerfil'
 import CadastroEndereco from '../Pages/CadastroEndereco/CadastroEndereco'
 import Error from '../Pages/Error/Error'
-import Login from '../Pages/Login/Login'
+import Login from '../Pages/Login/LoginPage'
+
 const Router = () => {
     return (
         <BrowserRouter>
-            <Switch>
+                <Switch>
                 <Route exact path={"/"}>
                     <Home />
                 </Route>
