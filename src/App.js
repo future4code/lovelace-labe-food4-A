@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Header from "./components/Header"
 
 const App = () => {
+
   const token = localStorage.getItem("token")
   const [rightButtonText, setRightButtonText] = useState(token ? "Logout" : "Login")
 
