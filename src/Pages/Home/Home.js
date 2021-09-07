@@ -6,6 +6,8 @@ import CardRestaurante from './CardRestaurante'
 import { Typography } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import BarraDeBotoes from '../../components/BarraDeBotoesInferior/BarraDeBotoes'
+import Footer from '../../components/Footer/Footer'
+
 
 const Home = () => {
 
@@ -40,6 +42,7 @@ const Home = () => {
       <CardRestaurante />
 
      <BarraDeBotoes/>
+    <Footer/>
 
     </ContainerPrincipal>
   )
