@@ -6,7 +6,7 @@ import { goToRecipesList } from "../Routes/coordinator"
 
 export const login = (body, clear, history, setRightButtonText, setIsLoading) => {
     setIsLoading(true)
-    axios.post(`${BASE_URL}/fourFoodA/login`, body)
+    axios.post(`${BASE_URL}/login`, body)
         .then((res) => {
             localStorage.setItem("token", res.data.token)
             clear()
@@ -22,7 +22,7 @@ export const login = (body, clear, history, setRightButtonText, setIsLoading) =>
 
 export const signUp = (body, clear, history, setRightButtonText, setIsLoading) => {
     setIsLoading(true)
-    axios.post(`${BASE_URL}/fourFoodA/signup`, body)
+    axios.post(`${BASE_URL}/signup`, body)
         .then((res) => {
             localStorage.setItem("token", res.data.token)
             clear()
@@ -35,3 +35,23 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
             alert(err.response.data.message)
         })
 }
+
+
+export const GetDetail =()=>{
+    const token = localStorage.getItem("token")
+    axios.get(`${BASE_URL}/restaurants/1`, { 
+      headers: {
+      auth: token
+      },
+      })
+
+      .then((res) => {
+          console.log("funfou olha",res)
+          
+    })
+    .catch((err) => {
+        console.log("deu b.o",err)
+    })
+
+
+  }
