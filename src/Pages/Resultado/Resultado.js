@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { ListItem } from '@material-ui/core';
@@ -8,36 +8,83 @@ import {DescribeContainer} from './style'
 import Restaurante from '../../assets/restaurante.png'
 import Principais from '../../assets/principais.png'
 import {MenuContainer} from './style'
-import {GetDetail} from "../../services/user"
+//import {GetDetail} from "../../services/user"
 import { useEffect } from 'react';
+import { BASE_URL } from '../../constants/urls';
 
 const Resultado = () => {
+  const [local,setLocal] = useState([])
   
+
+  const GetDetail =()=>{
+
+    const token = localStorage.getItem("token")
+    axios.get(`${BASE_URL}/restaurants/1`, { 
+      headers: {
+      auth: token
+      },
+      })
+
+      .then((res) => {
+          console.log("funfou olha",res)
+          
+          setLocal(res.data.restaurant)
+
+    })
+    .catch((err) => {
+        console.log("deu b.o",err)
+        
+    })
+
+  }
+
   
+
+
   useEffect(() => {
     GetDetail()
-  });
+  },[]);
+
+
+
+
+  
+     const restaurante =  [local].map((item) => {
+       return (
+        <DescribeContainer key={item.id}>
+
+         <img src ={item.logoUrl}/>
+         <h4>{item.name}</h4>
+         <p>{item.category}</p>
+         <div>
+         <p>{item.deliveryTime} min</p>
+         <p>Frete R$ {item.shipping},00</p> 
+         </div>
+         <p>{item.address}</p>
+
+         </DescribeContainer>
+         )
+     });
+
+    
+
 
   
   return(
+
     <div> 
+
+
+
+      
 
       <Header>
       <img src={Back_Icon}/> <h3>Resultado</h3>
       </Header>
 
-      <DescribeContainer>
 
-        <img src={Restaurante}/>
-        <p> Nome restaurante </p>
-        <p> Ramo </p>
-        <div> 
-        <p> Tempo Estimado </p>
-        <p> frete </p> 
-        </div>
-        <p> Endereço </p>
-      </DescribeContainer>
-
+      {restaurante}
+      
 
 
       <div>
@@ -78,6 +125,7 @@ const Resultado = () => {
         </div>
 
         </MenuContainer>
+
 
     </div>
   )

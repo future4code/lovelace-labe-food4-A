@@ -4,6 +4,7 @@ import { goToRecipesList } from "../Routes/coordinator"
 
 
 
+
 export const login = (body, clear, history, setRightButtonText, setIsLoading) => {
     setIsLoading(true)
     axios.post(`${BASE_URL}/login`, body)
@@ -37,24 +38,7 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
 }
 
 
-export const GetDetail =()=>{
-    const token = localStorage.getItem("token")
-    axios.get(`${BASE_URL}/restaurants/1`, { 
-      headers: {
-      auth: token
-      },
-      })
 
-      .then((res) => {
-          console.log("funfou olha",res)
-          
-    })
-    .catch((err) => {
-        console.log("deu b.o",err)
-    })
-
-
-  }
 
   export const getRestaurants =()=>{
     const token = localStorage.getItem("token")

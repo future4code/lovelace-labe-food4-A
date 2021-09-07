@@ -11,6 +11,7 @@ import Error from '../Pages/Error/Error'
 import LoginPage from '../Pages/Login/LoginPage'
 
 const Router = () => {
+    //const [teste,setTest]=useState([])
     return (
         <BrowserRouter>
                 <Switch>
