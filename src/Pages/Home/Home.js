@@ -11,13 +11,17 @@ import { BottomNavigationAction } from '@material-ui/core'
 import { CardEstilizado } from './styled'
 import { Typography } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+import { getRestaurants } from '../../services/user'
 
 const Home = () => {
+
+  
+
 
   return(
 
     <ContainerPrincipal>
-
+        <button onClick={getRestaurants}>teste</button>
         <Typography gutterBottom variant="h4" component="h2">
           Rappi4
         </Typography>
