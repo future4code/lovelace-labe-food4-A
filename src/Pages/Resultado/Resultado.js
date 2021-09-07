@@ -8,8 +8,17 @@ import {DescribeContainer} from './style'
 import Restaurante from '../../assets/restaurante.png'
 import Principais from '../../assets/principais.png'
 import {MenuContainer} from './style'
+import {GetDetail} from "../../services/user"
+import { useEffect } from 'react';
 
 const Resultado = () => {
+  
+  
+  useEffect(() => {
+    GetDetail()
+  });
+
+  
   return(
     <div> 
 
