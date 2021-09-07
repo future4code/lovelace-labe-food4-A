@@ -37,9 +37,6 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
         })
 }
 
-
-
-
   export const getRestaurants =()=>{
     const token = localStorage.getItem("token")
     axios.get(`${BASE_URL}/restaurants`, { 
@@ -58,3 +55,5 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
 
 
   }
+  }
+
