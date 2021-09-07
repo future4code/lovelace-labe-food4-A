@@ -12,6 +12,7 @@ import LoginPage from '../Pages/Login/LoginPage'
 import Asiaticas from '../Pages/Home/Categorias/Asiaticas'
 
 const Router = () => {
+    //const [teste,setTest]=useState([])
     return (
         <BrowserRouter>
                 <Switch>
