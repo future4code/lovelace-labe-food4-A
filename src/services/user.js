@@ -55,22 +55,3 @@ export const GetDetail =()=>{
 
 
   }
-
-  export const getRestaurants =()=>{
-    const token = localStorage.getItem("token")
-    axios.get(`${BASE_URL}/restaurants`, { 
-      headers: {
-      auth: token
-      },
-      })
-
-      .then((res) => {
-          console.log("olha",res)
-          
-    })
-    .catch((err) => {
-        console.log("deu b.o",err)
-    })
-
-
-  }
