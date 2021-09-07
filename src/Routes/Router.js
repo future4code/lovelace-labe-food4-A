@@ -9,6 +9,7 @@ import MeuPerfil from '../Pages/MeuPerfil/MeuPerfil'
 import CadastroEndereco from '../Pages/CadastroEndereco/CadastroEndereco'
 import Error from '../Pages/Error/Error'
 import LoginPage from '../Pages/Login/LoginPage'
+import Asiaticas from '../Pages/Home/Categorias/Asiaticas'
 
 const Router = () => {
     return (
@@ -46,6 +47,10 @@ const Router = () => {
                     <CadastroEndereco />
                 </Route>
 
+                <Route exact path={"/categorias/assiaticas"}>
+                    <Asiaticas />
+                </Route>
+                
                 <Route>
                     <Error />
                 </Route>
