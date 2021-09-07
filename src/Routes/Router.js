@@ -8,7 +8,7 @@ import Carrinho from '../Pages/Carrinho/Carrinho'
 import MeuPerfil from '../Pages/MeuPerfil/MeuPerfil'
 import CadastroEndereco from '../Pages/CadastroEndereco/CadastroEndereco'
 import Error from '../Pages/Error/Error'
-import Login from '../Pages/Login/LoginPage'
+import LoginPage from '../Pages/Login/LoginPage'
 
 const Router = () => {
     return (
@@ -19,7 +19,7 @@ const Router = () => {
                 </Route>
 
                 <Route exact path={"/login"}>
-                    <Login />
+                    <LoginPage/>
                 </Route>
 
                 <Route exact path={"/signUp"}>

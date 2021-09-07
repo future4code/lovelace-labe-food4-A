@@ -140,7 +140,7 @@ font-stretch: normal;
 font-style: normal;
 line-height: normal;
 letter-spacing: -0.39px;
-color: var(--dark-peach);
+color: #e86e5a;
 `
 const DataPedido=Styled.div`
 width: 296px;
@@ -193,6 +193,7 @@ const MeuPerfil = () => {
      <DataPedido>30 de setembro</DataPedido>
      <ValorPedido>1000,00</ValorPedido>
      </CardDehistoricoDePedidos>
+     
      <CardDehistoricoDePedidos>
       <NomeRestaurante>Nome Restaurante</NomeRestaurante>
      <DataPedido>30 de setembro</DataPedido>

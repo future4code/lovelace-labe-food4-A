@@ -15,6 +15,7 @@ export const CardEstilizado = styled(Card)`
 width: 50vw;
 margin: 20px;
 `
+
 export const Img = styled.img`
 width: 50vw;
 `

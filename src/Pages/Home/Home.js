@@ -3,15 +3,14 @@ import { TextField } from '@material-ui/core'
 import { ContainerPrincipal } from './styled'
 import { ContainerRestaurante } from './styled'
 import CardRestaurante from './CardRestaurante'
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined'
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import { BottomNavigation } from '@material-ui/core'
-import { BottomNavigationAction } from '@material-ui/core'
-import { CardEstilizado } from './styled'
 import { Typography } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+
 import { getRestaurants } from '../../services/user'
+import BarraDeBotoes from '../../components/BarraDeBotoesInferior/BarraDeBotoes'
+import Footer from '../../components/Footer/Footer'
+
+
 
 const Home = () => {
 
@@ -48,13 +47,8 @@ const Home = () => {
 
       <CardRestaurante />
 
-      <CardEstilizado>
-      <BottomNavigation >
-        <BottomNavigationAction icon={<HomeOutlinedIcon />} />
-        <BottomNavigationAction icon={<ShoppingCartOutlinedIcon />} />
-        <BottomNavigationAction icon={<AccountCircleOutlinedIcon />} />
-      </BottomNavigation>   
-    </CardEstilizado>
+     <BarraDeBotoes/>
+    <Footer/>
 
     </ContainerPrincipal>
   )
