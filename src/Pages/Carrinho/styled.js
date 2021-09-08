@@ -26,11 +26,14 @@ p{
 `
 
 export const ContainerProdutos = styled.div`
+width: 500px;
+height: 250px;
 display: flex;
 flex-direction: column;
 /* align-items: center;
 justify-content: center; */
-margin: 10px;
+margin: 10vh;
+border:1px solid black;
 `
 
 
@@ -59,6 +62,31 @@ input{
  
 `
 
+
+export const FooterCarrinhoVazio = styled.div`
+height: 20px;
+box-shadow: 0px 1px 1px  rgba(0, 0, 0, 0.29);
+margin-top: 200vh;
+div{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+button{
+  margin-top: 50px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+  :hover{
+    background-color: #dcdcdc;
+    border-radius: 4px;
+  }
+}
+}
+`
+
 export const Footer = styled.div`
 margin: 16px;
 display: flex;
@@ -83,12 +111,40 @@ justify-content: center;
 }
 `
 export const ContainerRosa = styled.div`
-display: flex;
+height: 20vh;
+margin-top: 70px;
 background-color: #e86e5a;
-height: 100px;
-margin: 10px;
+position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 70vh;
+  width: 100%;
+   height: 14%;  
+  /* Full height  */
+  overflow: auto; /* Enable scroll if needed */
+div{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
+p{
+  color: white;
+  text-align: center;
+}
+
+h5{
+  text-align: center;
+  margin-top: 4px;
+
+}
+
+img{
+  margin-right: 20px;
+}
 `
+
 
 const useStyles = makeStyles({
     root: {
@@ -115,7 +171,7 @@ const useStyles = makeStyles({
           <CardContent>
             <Typography gutterBottom variant="h5" component="h3">
                 <ContainerTitle>
-                <p>Vinil butantã</p>
+                <p></p>
               
                 </ContainerTitle>
             

@@ -55,5 +55,5 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
 
 
   }
-  }
+  
 
