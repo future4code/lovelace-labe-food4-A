@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Card from '@material-ui/core/Card';
 
+
 export const ContainerPrincipal = styled.div`
 display: flex;
 flex-direction: column;
@@ -15,8 +16,8 @@ export const CardEstilizado = styled(Card)`
 width: 50vw;
 margin: 20px;
 `
-export const CardEstilizado2 = styled(Card)`
-width: 50vw;
+export const CardCategoria= styled.div`
+width: 65vw;
 margin: 20px;
 text-align: center;
 `
@@ -26,5 +27,19 @@ width: 50vw;
 `
 export const ContainerDetalhesRestaurante = styled.div`
 display: flex;
+justify-content: space-between;
+`
+export const ContainerPrincipalCategoria = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin: 20px;
+`
+export const ContainerLogoEbotaoVoltar = styled.div`
+margin: 10px;
+display: flex;
+flex-direction: row;
+align-items: center;
 justify-content: space-between;
 `
