@@ -30,7 +30,8 @@ display: flex;
 flex-direction: column;
 /* align-items: center;
 justify-content: center; */
-margin: 10px;
+margin-top: 30vh;
+border: 1px solid black;
 `
 
 
@@ -57,6 +58,25 @@ input{
   outline: none;
 }
  
+`
+
+export const FooterCarrinhoVazio = styled.div`
+height: 20px;
+box-shadow: 0px 1px 1px  rgba(0, 0, 0, 0.29);
+margin-top: 200vh;
+div{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+button{
+  margin-top: 50px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+}
 `
 
 export const Footer = styled.div`
@@ -86,8 +106,8 @@ export const ContainerRosa = styled.div`
 display: flex;
 background-color: #e86e5a;
 height: 100px;
-margin: 10px;
-
+margin-top: 60vh;
+width: 100%;
 `
 
 const useStyles = makeStyles({
