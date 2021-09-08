@@ -5,6 +5,7 @@ import { ContainerRestaurante } from './styled'
 import { Typography } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import BarraDeBotoes from '../../components/BarraDeBotoesInferior/BarraDeBotoes'
+
 import { useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../constants/urls'
@@ -99,6 +100,7 @@ const Home = () => {
     </CardEstilizado2>
 
     {listaNaTela}
+
 
     <BarraDeBotoes/> 
 
