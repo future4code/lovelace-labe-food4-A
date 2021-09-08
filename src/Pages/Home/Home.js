@@ -8,7 +8,6 @@ import SearchIcon from '@material-ui/icons/Search'
 
 import { getRestaurants } from '../../services/user'
 import BarraDeBotoes from '../../components/BarraDeBotoesInferior/BarraDeBotoes'
-import Footer from '../../components/Footer/Footer'
 
 
 
@@ -48,7 +47,6 @@ const Home = () => {
       <CardRestaurante />
 
      <BarraDeBotoes/>
-    <Footer/>
 
     </ContainerPrincipal>
   )

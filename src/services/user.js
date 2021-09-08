@@ -1,4 +1,5 @@
 import axios from "axios"
+import { useEffect } from "react"
 import { BASE_URL } from "../constants/urls"
 import { goToRecipesList } from "../Routes/coordinator"
 
@@ -71,6 +72,5 @@ export const GetDetail =()=>{
     .catch((err) => {
         console.log("deu b.o",err)
     })
-
-
   }
+

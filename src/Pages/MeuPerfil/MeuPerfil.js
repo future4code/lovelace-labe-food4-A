@@ -1,206 +1,72 @@
-import React from 'react'
-import Styled from "styled-components"
-
-const Geral=Styled.div`
-width:100%;
-height:100%;
-`
-
-const Topo=Styled.div`
-width: 360px;
-height: 64px;
-margin: 0 0 16px;
--webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
-background-color: #fff;
-` 
-const SeguraPerfil=Styled.div`
-width: 175px;
-height: 44px;
-margin: 20px 92px 0 93px;
-padding: 13px 53.5px 12px;
-` 
-
-const Title=Styled.h3`
-width: 68px;
-height: 19px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-text-align: center;
-color:#000000;
-`
-const UserName=Styled.h2`
-width: 328px;
-height: 18px;
-margin: 16px 16px 8px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #000;
-`
-const USerEmail=Styled.h2`
-width: 328px;
-height: 18px;
-margin: 2px 16px 8px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #000;
-`
-const UserNumber=Styled.h2`
-width: 328px;
-height: 18px;
-margin: 8px 16px 16px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #000;
-`
-const ContainerDoEndereço=Styled.div`
-width: 360px;
-height: 76px;
-margin: 16px 0;
-padding: 16px;
-background-color: #eee;
-`
-const EndereçoCadastrado=Styled.h2`
-width: 328px;
-height: 18px;
-margin: 0 0 8px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #b8b8b8;
-`
-
-const LocalCadastro=Styled.div`
-width: 328px;
-height: 18px;
-margin: 8px 0 0;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #000;
-`
-
-const TitleHistórico=Styled.div`
-width: 328px;
-height: 18px;
-margin: 16px 16px 8px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #000;
-`
-const CardDehistoricoDePedidos=Styled.div`
-  width: 328px;
-  height: 102px;
-  padding: 16px;
-  border-radius: 8px;
-  border: solid 1px #b8b8b8;
-`
-
-const NomeRestaurante=Styled.div`
-width: 296px;
-height: 18px;
-margin: 0 0 9px;
-font-family: Roboto;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #e86e5a;
-`
-const DataPedido=Styled.div`
-width: 296px;
-height: 18px;
-margin: 9px 0 7px;
-font-family: Roboto;
-font-size: 12px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.29px;
-color: #000;
-`
-
-const ValorPedido=Styled.div`
-width: 296px;
-height: 18px;
-margin: 7px 0 0;
-font-family: Roboto;
-font-size: 16px;
-font-weight: bold;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: -0.39px;
-color: #000;
-`
+import React, { useEffect, useState } from 'react'
+import { Geral } from './Styled'
+import BarraDeBotoes from '../../components/BarraDeBotoesInferior/BarraDeBotoes'
+import { BASE_URL } from '../../constants/urls'
+import axios from 'axios'
+import CardPerfil from './CardPerfil'
 
 const MeuPerfil = () => {
-  return(
+  const [endereco, setEndereco] = useState('')
+  const [usuario, setUsuario] = useState({})
+  const [history,setHisory]= useState([])
+
+  const getFullAddress = () => {
+    axios
+      .get(`${BASE_URL}/profile`, {
+        headers: {
+          auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijd3Z3V6T1NiRHBoZVplWlZlSFJlIiwibmFtZSI6IkRvZ2xhcyIsImVtYWlsIjoiRG9nbGFzQGRvZy5jb20iLCJjcGYiOiI5MjkuOTI5LjkyOS0yOSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBwb21wZXUgY2FyZG9zbywgNzAsIDAwIC0gVmlsYSBhdWd1c3RhIiwiaWF0IjoxNjMxMDMzOTQwfQ.O7mL4LUVP95G6XphaPnoKAzjPw62DFxU5cmRTxxAdT0'
+        }
+      })
+      .then(res => {
+        setEndereco(res.data.user)
+      })
+      .catch(err => {
+        console.log('errroooou', err)
+      })
+  }
+
+  const getFullProfile = () => {
+    return axios
+      .get(`${BASE_URL}/profile`, {
+        headers: {
+          auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijd3Z3V6T1NiRHBoZVplWlZlSFJlIiwibmFtZSI6IkRvZ2xhcyIsImVtYWlsIjoiRG9nbGFzQGRvZy5jb20iLCJjcGYiOiI5MjkuOTI5LjkyOS0yOSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBwb21wZXUgY2FyZG9zbywgNzAsIDAwIC0gVmlsYSBhdWd1c3RhIiwiaWF0IjoxNjMxMDMzOTQwfQ.O7mL4LUVP95G6XphaPnoKAzjPw62DFxU5cmRTxxAdT0',
+          ContentType: 'application/json'
+        }
+      })
+      .then(res => {
+        setUsuario(res.data.user)
+      })
+      .catch(err => {
+        console.log('errroooou', err)
+      })
+  }
+
+  const getOrdersHistory = () => {
+    return axios
+      .get(`${BASE_URL}/orders/history`, {
+        headers: {
+          auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IktzczdtVGpweHNVZUFFNTMza1F4IiwibmFtZSI6ImFzdHJvIiwiZW1haWwiOiJhc3Ryb2RldkBmdXR1cmU0LmNvbSIsImNwZiI6IjExMS4xMTEuMTExLTExIiwiaGFzQWRkcmVzcyI6dHJ1ZSwiYWRkcmVzcyI6IlIuIEFmb25zbyBCcmF6IGRvaXMsIDE1LCA3MSAtIFZpbGEgTi4gY29uY2Vpw6fDo28iLCJpYXQiOjE2MzEwMzQzNDR9.qkey6KCpitj6IyvsEmChIeDiodTt0GQkckxwkUWnw9Q',
+          ContentType: 'application/json'
+        }
+      })
+      .then(res => {
+        console.log(res.data.orders)
+        setHisory(res.data.orders)
+      })
+      .catch(err => {
+        console.log('errroooou', err)
+      })
+  }
+
+  useEffect(() => {
+    getFullAddress()
+    getFullProfile()
+    getOrdersHistory()
+  }, [])
+  return (
     <Geral>
-      <Topo>
-        <SeguraPerfil>
-          <Title>Meu perfil</Title>
-        </SeguraPerfil>
-       </Topo> 
-      <UserName>Nome Do Usuario</UserName>
-      <USerEmail>Email Usuario</USerEmail>
-      <UserNumber>000.0000.0000..0</UserNumber>
-
-      <ContainerDoEndereço>
-        <EndereçoCadastrado>Endereço cadastrado</EndereçoCadastrado>
-         <LocalCadastro>Endereço do usuario</LocalCadastro>
-      </ContainerDoEndereço>
-
-    <TitleHistórico>Hisorico Usuario</TitleHistórico>
-     <CardDehistoricoDePedidos>
-      <NomeRestaurante>Nome Restaurante</NomeRestaurante>
-     <DataPedido>30 de setembro</DataPedido>
-     <ValorPedido>1000,00</ValorPedido>
-     </CardDehistoricoDePedidos>
-     
-     <CardDehistoricoDePedidos>
-      <NomeRestaurante>Nome Restaurante</NomeRestaurante>
-     <DataPedido>30 de setembro</DataPedido>
-     <ValorPedido>1000,00</ValorPedido>
-     </CardDehistoricoDePedidos>
-     
-     
+      <CardPerfil endereco={endereco} usuario={usuario} history={history} />
+      <BarraDeBotoes />
     </Geral>
   )
 }
