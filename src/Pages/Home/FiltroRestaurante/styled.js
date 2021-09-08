@@ -9,7 +9,7 @@ justify-content: center;
 align-items: center;
 `
 export const ContainerRestaurante = styled.div`
-width: 90vw;
+width: 50vw;
 margin: 20px;
 `
 export const CardEstilizado = styled(Card)`
@@ -42,4 +42,12 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-around;
+`
+export const InputContainer = styled.div`
+width: 90vw;
+margin: auto ;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 `

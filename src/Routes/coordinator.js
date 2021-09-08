@@ -23,4 +23,9 @@ export const goToPerfil = (history) => {
     history. push ("/meuPerfil")
 }
 
+export const goToFiltroRestaurante = (history) => {
+    history. push ("/filtro/restaurante")
+}
+
+
 
