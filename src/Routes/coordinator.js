@@ -9,3 +9,7 @@ export const goToSignUp = (history) => {
 export const goToRecipesList = (history) => {
     history.push("/")
 }
+
+export const goToAsiaticas = (history) => {
+    history. push ("/categorias/assiaticas")
+}
