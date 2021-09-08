@@ -11,9 +11,12 @@ import {MenuContainer} from './style'
 //import {GetDetail} from "../../services/user"
 import { useEffect } from 'react';
 import { BASE_URL } from '../../constants/urls';
+import{Scrow } from './style'
+import {PutCenter} from './style'
 
 const Resultado = () => {
   const [local,setLocal] = useState([])
+  const [produtos,setProdutos] = useState([])
   
 
   const GetDetail =()=>{
@@ -29,6 +32,7 @@ const Resultado = () => {
           console.log("funfou olha",res)
           
           setLocal(res.data.restaurant)
+          setProdutos(res.data.restaurant.products)
 
     })
     .catch((err) => {
@@ -54,6 +58,7 @@ const Resultado = () => {
         <DescribeContainer key={item.id}>
 
          <img src ={item.logoUrl}/>
+         
          <h4>{item.name}</h4>
          <p>{item.category}</p>
          <div>
@@ -62,9 +67,28 @@ const Resultado = () => {
          </div>
          <p>{item.address}</p>
 
+         
+
          </DescribeContainer>
          )
      });
+
+     
+     const Principal =  produtos.map((item) => {
+      return (
+       <MenuContainer key={item.id}>
+         
+        <img src ={item.photoUrl}/>
+        <div>
+        <h4>{item.name}</h4>
+        <p>{item.description}</p>
+        <p><b>R$ {item.price}</b></p> 
+        <button>Adicionar</button>
+        </div>
+
+        </MenuContainer>
+        )
+    });
 
     
 
@@ -82,10 +106,11 @@ const Resultado = () => {
       <img src={Back_Icon}/> <h3>Resultado</h3>
       </Header>
 
-
-      {restaurante}
       
-
+      <PutCenter>
+      {restaurante}
+      </PutCenter>
+      
 
       <div>
           <h3>Principais</h3>
@@ -93,19 +118,17 @@ const Resultado = () => {
 
         </div>
 
-      <MenuContainer>
-        
-            <img src={Principais} />
 
-            <div>
-              <p>Nome Lanche</p>
-              <p>Pão, carne, queijo, cebola roxa, tomate, alface e molho.</p>
-              <p>R$ Preço</p>
-              <button>Adicionar/Remover</button>
-            </div>
+        <PutCenter>
+          <Scrow>
+          {Principal}
+          </Scrow>
+        </PutCenter>
 
-      </MenuContainer>
 
+      
+
+      
 
       <div>
           <h3>Acompanhamentos</h3>
