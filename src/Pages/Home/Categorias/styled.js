@@ -9,7 +9,7 @@ justify-content: center;
 align-items: center;
 `
 export const ContainerRestaurante = styled.div`
-width: 90vw;
+width: 50vw;
 margin: 20px;
 `
 export const CardEstilizado = styled(Card)`

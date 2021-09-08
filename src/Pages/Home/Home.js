@@ -15,6 +15,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import { useHistory } from 'react-router'
 import { goToCategorias } from '../../Routes/coordinator'
+import { goToFiltroRestaurante } from '../../Routes/coordinator'
 
 const Home = () => {
 
@@ -68,7 +69,6 @@ const Home = () => {
     const categorias = restaurants.map ((res) => {
       return<Button color ="primary" onClick={() => goToCategorias(history, res.id)}>{res.category}</Button>
     })
-
    
   return(
 
@@ -80,18 +80,11 @@ const Home = () => {
       </ContainerLogoEbotaoVoltar>
    
     <ContainerRestaurante>
-        <TextField 
-          name={""}
-          value={""}
-          onChange={""}
-          label={<SearchIcon></SearchIcon>}
-          placeholder={"Restaurantes"}
-          variant={"outlined"}
-          fullWidth
-          margin ={'normal'}
-          required
-          type={"text"}
-        /> 
+      <Button onClick={(() => goToFiltroRestaurante(history))}
+      fullWidth
+      variant={"outlined"}
+     ><SearchIcon></SearchIcon> Restaurantes        
+      </Button>
     </ContainerRestaurante>
     
     <CardCategoria> 

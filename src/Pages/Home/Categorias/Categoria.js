@@ -3,16 +3,17 @@ import axios from 'axios'
 import { BASE_URL } from '../../../constants/urls'
 import { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router'
-import { CardEstilizado } from '../../../components/BarraDeBotoesInferior/styled'
-import { CardActionArea } from '@material-ui/core'
-import { ContainerPrincipalCategoria, Img } from '../styled'
-import { CardContent } from '@material-ui/core'
-import { Typography } from '@material-ui/core'
-import { ContainerDetalhesRestaurante } from '../styled'
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Button } from '@material-ui/core'
-import { ContainerLogoEbotaoVoltar } from '../styled'
+import { ContainerLogoEbotaoVoltar } from './styled'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import { CardContent, Typography } from '@material-ui/core'
 import { goToRecipesList } from '../../../Routes/coordinator'
+import { Button } from '@material-ui/core'
+import { ContainerPrincipalCategoria } from './styled'
+import { CardEstilizado } from './styled'
+import { CardActionArea } from '@material-ui/core'
+import { Img } from './styled'
+import { ContainerDetalhesRestaurante } from '../styled'
+
 
 const Categorias = () => {
 
@@ -70,7 +71,7 @@ const Categorias = () => {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Frete R$ {listaRestaurante && listaRestaurante[0] && listaRestaurante[0].shipping}
-        </Typography>
+          </Typography>
           </ContainerDetalhesRestaurante>
           <Typography variant="body2" color="textSecondary" component="p">
             {listaRestaurante && listaRestaurante[0] && listaRestaurante[0].description}
