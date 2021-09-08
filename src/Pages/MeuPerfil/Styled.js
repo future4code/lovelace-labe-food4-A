@@ -168,3 +168,23 @@ line-height: normal;
 letter-spacing: -0.39px;
 color: #000;
 `
+export const Icons=Styled.div`
+width: 24px;
+height: 24px;
+margin: 10px 0 10px 304px;
+object-fit: contain;
+`
+
+export const TitleVazio=Styled.div`
+width: 360px;
+height: 42px;
+margin: 16px 0 248px;
+padding: 12px 32px
+`
+
+export const LinhaDivisoria=Styled.div`
+width: 328px;
+height: 1px;
+margin: 8px 16px 16px;
+border: solid 1px #000;
+`
