@@ -11,10 +11,11 @@ const MeuPerfil = () => {
   const [history,setHisory]= useState([])
 
   const getFullAddress = () => {
+    const token = localStorage.getItem("token")
     axios
       .get(`${BASE_URL}/profile`, {
         headers: {
-          auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijd3Z3V6T1NiRHBoZVplWlZlSFJlIiwibmFtZSI6IkRvZ2xhcyIsImVtYWlsIjoiRG9nbGFzQGRvZy5jb20iLCJjcGYiOiI5MjkuOTI5LjkyOS0yOSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBwb21wZXUgY2FyZG9zbywgNzAsIDAwIC0gVmlsYSBhdWd1c3RhIiwiaWF0IjoxNjMxMDMzOTQwfQ.O7mL4LUVP95G6XphaPnoKAzjPw62DFxU5cmRTxxAdT0'
+          auth: token
         }
       })
       .then(res => {
@@ -26,10 +27,11 @@ const MeuPerfil = () => {
   }
 
   const getFullProfile = () => {
+    const token = localStorage.getItem("token")
     return axios
       .get(`${BASE_URL}/profile`, {
         headers: {
-          auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijd3Z3V6T1NiRHBoZVplWlZlSFJlIiwibmFtZSI6IkRvZ2xhcyIsImVtYWlsIjoiRG9nbGFzQGRvZy5jb20iLCJjcGYiOiI5MjkuOTI5LjkyOS0yOSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBwb21wZXUgY2FyZG9zbywgNzAsIDAwIC0gVmlsYSBhdWd1c3RhIiwiaWF0IjoxNjMxMDMzOTQwfQ.O7mL4LUVP95G6XphaPnoKAzjPw62DFxU5cmRTxxAdT0',
+          auth: token,
           ContentType: 'application/json'
         }
       })
@@ -42,10 +44,11 @@ const MeuPerfil = () => {
   }
 
   const getOrdersHistory = () => {
+    const token = localStorage.getItem("token")
     return axios
       .get(`${BASE_URL}/orders/history`, {
         headers: {
-          auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IktzczdtVGpweHNVZUFFNTMza1F4IiwibmFtZSI6ImFzdHJvIiwiZW1haWwiOiJhc3Ryb2RldkBmdXR1cmU0LmNvbSIsImNwZiI6IjExMS4xMTEuMTExLTExIiwiaGFzQWRkcmVzcyI6dHJ1ZSwiYWRkcmVzcyI6IlIuIEFmb25zbyBCcmF6IGRvaXMsIDE1LCA3MSAtIFZpbGEgTi4gY29uY2Vpw6fDo28iLCJpYXQiOjE2MzEwMzQzNDR9.qkey6KCpitj6IyvsEmChIeDiodTt0GQkckxwkUWnw9Q',
+          auth: token,
           ContentType: 'application/json'
         }
       })
