@@ -1,23 +1,29 @@
 import styled from 'styled-components'
 
+//cabeçalho
 export const Header = styled.div`
 display: flex;
-justify-content: center;
+flex-direction: row;
 align-items: center;
 width: 100%;
-height: 20px;
+height: 30px;
 background-color: whitesmoke;
 
+h3{
+    margin-left:110px;
+    
+}
 
 img{
-    width: 3vw;
-    height:3vh;
+    width: 23px;
+    height:24px;
+    margin-left:20px;
     
 }
 `;
 
 
-
+//Estilização do container de informações do restaurante
 export const DescribeContainer = styled.div`
 display: flex;
 flex-direction:column;
@@ -59,13 +65,16 @@ img{
 `;
 
 
+
+//Estilização do container dos produtos
 export const MenuContainer = styled.div`
 display: flex;
 flex-direction:row;
 height: 112px;
 width: 95%;
 background-color: whitesmoke;
-margin-top:10px;
+//margin-top:5px;
+margin-bottom:15px;
 border-radius:10px;
 
 div{
@@ -107,15 +116,22 @@ button{
 
 
 
-
+//Estilização para criar um scrow em um container
 export const Scrow = styled.div`
 overflow:auto;
 height: 280px;
 `;
 
 
-
+//Estilização para alinhar elementos ao centro da tela
 export const PutCenter = styled.div`
 display: flex;
 justify-content: center;
+`;
+
+
+export const EstilzaModal = styled.div`
+
+height: 100vh;
+//verificar o pq os estilos não aplicam
 `;
