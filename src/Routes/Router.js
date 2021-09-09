@@ -33,7 +33,8 @@ const Router = () => {
                     <Filtro />
                 </Route>
 
-                <Route exact path={"/resultado"}>
+{/* {caminho resultado modificado - teste} */}
+                <Route exact path={"/resultado/:id"}> 
                     <Resultado />
                 </Route>
 

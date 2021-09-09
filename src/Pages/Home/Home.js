@@ -17,7 +17,13 @@ import { useHistory } from 'react-router'
 import { goToCategorias } from '../../Routes/coordinator'
 import { goToFiltroRestaurante } from '../../Routes/coordinator'
 
+
 const Home = () => {
+
+  //parametros para pegar o id dos cards e direcionar para página de detalhe
+  const goToRestaurante = (id) => {
+    history.push (`/resultado/${id}`)
+}
 
   const [restaurants, setRestaurants] = useState([])
 
@@ -46,7 +52,7 @@ const Home = () => {
     }, [])
 
     const listaNaTela = restaurants.map((res) => {
-      return <CardEstilizado>
+      return <CardEstilizado onClick={()=>goToRestaurante(res.id)}>
       <CardActionArea>
         <Img src={res.logoUrl} />
         <CardContent>
