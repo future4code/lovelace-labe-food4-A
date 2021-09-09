@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { TextField, Button } from '@material-ui/core'
-import { ContainerPrincipal } from './styled'
+import { CardCategoria, ContainerLogoEbotaoVoltar, ContainerPrincipal } from './styled'
 import { ContainerRestaurante } from './styled'
 import { Typography } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
@@ -8,15 +8,14 @@ import BarraDeBotoes from '../../components/BarraDeBotoesInferior/BarraDeBotoes'
 import { useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../constants/urls'
-import { CardEstilizado, CardEstilizado2 } from './styled';
+import { CardEstilizado} from './styled';
 import { Img } from './styled'
 import { ContainerDetalhesRestaurante } from './styled';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import { goToAsiaticas } from '../../Routes/coordinator'
 import { useHistory } from 'react-router'
-
-
+import { goToCategorias } from '../../Routes/coordinator'
+import { goToFiltroRestaurante } from '../../Routes/coordinator'
 
 const Home = () => {
 
@@ -68,35 +67,29 @@ const Home = () => {
     });
 
     const categorias = restaurants.map ((res) => {
-      return<Button>{res.category}</Button>
+      return<Button color ="primary" onClick={() => goToCategorias(history, res.id)}>{res.category}</Button>
     })
-
+   
   return(
 
   <ContainerPrincipal>
-
-      <Typography gutterBottom variant="h4" component="h2">
+      <ContainerLogoEbotaoVoltar>
+      <Typography gutterBottom variant="h5" component="p">
         Rappi4
       </Typography>
-
+      </ContainerLogoEbotaoVoltar>
+   
     <ContainerRestaurante>
-        <TextField 
-          name={""}
-          value={""}
-          onChange={""}
-          label={<SearchIcon></SearchIcon>}
-          placeholder={"Restaurantes"}
-          variant={"outlined"}
-          fullWidth
-          margin ={'normal'}
-          required
-          type={"text"}
-        /> 
+      <Button onClick={(() => goToFiltroRestaurante(history))}
+      fullWidth
+      variant={"outlined"}
+     ><SearchIcon></SearchIcon> Restaurantes        
+      </Button>
     </ContainerRestaurante>
     
-    <CardEstilizado2> 
-    {categorias}
-    </CardEstilizado2>
+    <CardCategoria> 
+      {categorias}
+    </CardCategoria>
 
     {listaNaTela}
 

@@ -13,3 +13,21 @@ export const goToRecipesList = (history) => {
 export const goToAsiaticas = (history) => {
     history.push ("/categorias/assiaticas")
 }
+
+export const goToCategorias = (history,id) => {
+    history. push (`/categorias/${id}`)
+}
+
+
+export const goToCart = (history) => {
+    history. push ("/carrinho")
+}
+
+export const goToPerfil = (history) => {
+    history. push ("/meuPerfil")
+}
+
+export const goToFiltroRestaurante = (history) => {
+    history. push ("/filtro/restaurante")
+}
+
