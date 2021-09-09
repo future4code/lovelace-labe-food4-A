@@ -11,5 +11,5 @@ export const goToRecipesList = (history) => {
 }
 
 export const goToAsiaticas = (history) => {
-    history. push ("/categorias/assiaticas")
+    history.push ("/categorias/assiaticas")
 }
