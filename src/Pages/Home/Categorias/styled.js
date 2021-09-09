@@ -9,21 +9,21 @@ justify-content: center;
 align-items: center;
 `
 export const ContainerRestaurante = styled.div`
-width: 50vw;
+width: 90vw;
 margin: 20px;
 `
 export const CardEstilizado = styled(Card)`
-width: 50vw;
+width: 90vw;
 margin: 20px;
 `
 export const CardCategoria= styled.div`
-width: 65vw;
+width: 90vw;
 margin: 20px;
 text-align: center;
 `
 
 export const Img = styled.img`
-width: 50vw;
+width: 90vw;
 `
 export const ContainerDetalhesRestaurante = styled.div`
 display: flex;

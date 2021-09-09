@@ -61,7 +61,35 @@ const FiltroRestaurante = () => {
         return false
       }
     })
-  
+
+    const listaNaTela =  () => {
+      if (listaFiltrada.length > 1) {
+        return <Typography variant="body2" color="textSecondary" component="p">
+        Encontre o seu Restaurante
+      </Typography> 
+      }
+       return listaFiltrada.map ((res) => {
+        return<CardEstilizado>
+          <CardActionArea>
+            <Img src={res.logoUrl} />
+            <CardContent>
+              <Typography color ="primary" gutterBottom variant="h5" component="h2">
+                {res.name}
+              </Typography>
+              <ContainerDetalhesRestaurante>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {res.deliveryTime} mim
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Frete R$ {res.shipping}
+              </Typography>
+              </ContainerDetalhesRestaurante>
+            </CardContent>
+          </CardActionArea>
+        </CardEstilizado> 
+    }) 
+    }
+
 
     return (
     <div>    
@@ -85,27 +113,9 @@ const FiltroRestaurante = () => {
     </InputContainer>
     
     <ContainerPrincipal>
-        {listaFiltrada.map (res => {
-          return<CardEstilizado>
-          <CardActionArea>
-            <Img src={res.logoUrl} />
-            <CardContent>
-              <Typography color ="primary" gutterBottom variant="h5" component="h2">
-                {res.name}
-              </Typography>
-              <ContainerDetalhesRestaurante>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {res.deliveryTime} mim
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Frete R$ {res.shipping}
-              </Typography>
-              </ContainerDetalhesRestaurante>
-            </CardContent>
-          </CardActionArea>
-        </CardEstilizado> 
-        })}
-        <BarraDeBotoes/> 
+
+      {listaNaTela()}
+      <BarraDeBotoes/> 
 
     </ContainerPrincipal>
     </div>
