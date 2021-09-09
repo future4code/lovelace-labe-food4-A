@@ -27,6 +27,7 @@ const LoginForm = ({setRightButtonText}) => {
                         onChange={onChange}
                         label={"E-mail"}
                         variant={"outlined"}
+                        placeholder={"email@email.com"}
                         fullWidth
                         margin={"normal"}
                         required
@@ -37,11 +38,13 @@ const LoginForm = ({setRightButtonText}) => {
                         value={form.password}
                         onChange={onChange}
                         label={"Senha"}
+                        placeholder={"Mínimo de seis caracteres"}
                         variant={"outlined"}
                         fullWidth
                         margin={"normal"}
                         required
-                        type={"password"}
+                        type={"pasword"}
+                    
                     />
                 </InputsContainer>
                 <Button
@@ -50,7 +53,7 @@ const LoginForm = ({setRightButtonText}) => {
                     variant={"contained"}
                     color={"primary"}
                 >
-                    {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Fazer Login</>}
+                    {isLoading ? <CircularProgress color={"neutral"} size={24} /> : <b>Entrar</b>}
                 </Button>
             </form>
         </LoginFormContainer>

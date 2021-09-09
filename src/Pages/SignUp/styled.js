@@ -12,19 +12,18 @@ export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80vw;
-  max-width: 500px;
+  max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
-  justify-content:center;
 `
 
 export const SignUpFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80vw;
-  max-width: 500px;
+  max-width: 450px;
+  align-items: center;
   margin-bottom: 20px;
-  justify-content:center;
 `
 
 export const LogoImage = styled.img`
