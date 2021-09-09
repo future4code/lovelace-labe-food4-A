@@ -16,9 +16,12 @@ import CardContent from '@material-ui/core/CardContent';
 import { useHistory } from 'react-router'
 import { goToCategorias } from '../../Routes/coordinator'
 import { goToFiltroRestaurante } from '../../Routes/coordinator'
+import useProtectedPage from '../../hooks/useProtectedPage'
 
 
 const Home = () => {
+
+  useProtectedPage() //acesso restrito - somente com o login/token
 
   //parametros para pegar o id dos cards e direcionar para página de detalhe
   const goToRestaurante = (id) => {
@@ -38,7 +41,7 @@ const Home = () => {
     })
 
     .then((res) => {
-      setRestaurants (res.data.restaurants)
+      setRestaurants(res.data.restaurants)
       console.log ('chegou', res.data.restaurants)
     })
 
