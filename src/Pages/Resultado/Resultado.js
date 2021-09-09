@@ -31,6 +31,10 @@ import 'react-simple-hook-modal/dist/styles.css';
 import {ModalProvider,Modal,useModal,ModalTransition,} from 'react-simple-hook-modal';
 
 
+//importe teste para pgar id
+import { useParams } from 'react-router-dom';
+
+
 
 
 //container/conteúdo/configurações do modal
@@ -110,7 +114,8 @@ const MyComponent = () => {
 
 const Resultado = () => {
   
-
+  //teste
+  const params = useParams()
   const history = useHistory()
   const [local,setLocal] = useState([])
   const [produtos,setProdutos] = useState([])
@@ -119,7 +124,7 @@ const Resultado = () => {
 //requisição do endpoint para pegar as informações de um restaurante específico
   const GetDetail =()=>{
     const token = localStorage.getItem("token")
-    axios.get(`${BASE_URL}/restaurants/2`, { 
+    axios.get(`${BASE_URL}/restaurants/${params.id}`, { 
       headers: {
       auth: token
       },
