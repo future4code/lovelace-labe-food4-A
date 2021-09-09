@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextField, Button } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { CardCategoria, ContainerLogoEbotaoVoltar, ContainerPrincipal } from './styled'
 import { ContainerRestaurante } from './styled'
 import { Typography } from '@material-ui/core'
@@ -16,7 +16,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { useHistory } from 'react-router'
 import { goToCategorias } from '../../Routes/coordinator'
 import { goToFiltroRestaurante } from '../../Routes/coordinator'
-
+import { Scrow } from './styled'
 
 const Home = () => {
 
@@ -26,6 +26,7 @@ const Home = () => {
 }
 
   const [restaurants, setRestaurants] = useState([])
+  const [pedidos, setPedidos] = useState([])
 
   const history = useHistory()
 
@@ -47,12 +48,31 @@ const Home = () => {
     })
     }
 
-    useEffect(() => {
-    getRestaurants()
-    }, [])
+    const getActiveOrder = () => {
+      const token = localStorage.getItem("token")
+      axios.get(`${BASE_URL}/active-order`, { 
+        headers: {
+          auth: token
+        }
+      })
+  
+      .then((res) => {
+        setPedidos (res.data)
+        console.log ('ordens', res.data)
+      })
+  
+      .catch((err) => {
+         console.log(err)
+      })
+      }
+
+      useEffect(() => {
+        getRestaurants()
+        getActiveOrder()
+      }, [])
 
     const listaNaTela = restaurants.map((res) => {
-      return <CardEstilizado onClick={()=>goToRestaurante(res.id)}>
+      return <CardEstilizado key={res.id} onClick={()=>goToRestaurante(res.id)}>
       <CardActionArea>
         <Img src={res.logoUrl} />
         <CardContent>
@@ -73,7 +93,9 @@ const Home = () => {
     });
 
     const categorias = restaurants.map ((res) => {
-      return<Button color ="primary" onClick={() => goToCategorias(history, res.id)}>{res.category}</Button>
+      return <Scrow>
+      <Button key={res.id} onClick={() => goToCategorias(history, res.id)}>{res.category}</Button>
+      </Scrow>  
     })
    
   return(
@@ -89,7 +111,8 @@ const Home = () => {
       <Button onClick={(() => goToFiltroRestaurante(history))}
       fullWidth
       variant={"outlined"}
-     ><SearchIcon></SearchIcon> Restaurantes        
+      >
+      <SearchIcon></SearchIcon> Restaurantes        
       </Button>
     </ContainerRestaurante>
     

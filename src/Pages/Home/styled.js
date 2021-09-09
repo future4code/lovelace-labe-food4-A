@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Card from '@material-ui/core/Card';
-
+import { Button } from '@material-ui/core';
 
 export const ContainerPrincipal = styled.div`
 display: flex;
@@ -13,17 +13,19 @@ width: 90vw;
 margin: 20px;
 `
 export const CardEstilizado = styled(Card)`
-width: 50vw;
+width: 90vw;
 margin: 20px;
 `
 export const CardCategoria= styled.div`
-width: 65vw;
-margin: 20px;
+display: flex;
+overflow: auto;
+width: 300px;
+
 text-align: center;
 `
 
 export const Img = styled.img`
-width: 50vw;
+width: 90vw;
 `
 export const ContainerDetalhesRestaurante = styled.div`
 display: flex;
@@ -43,3 +45,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-around;
 `
+export const Scrow = styled.div`
+margin: 5px;
+`
+
