@@ -34,6 +34,8 @@ import {ModalProvider,Modal,useModal,ModalTransition,} from 'react-simple-hook-m
 //importe teste para pgar id
 import { useParams } from 'react-router-dom';
 
+import useProtectedPage from '../../hooks/useProtectedPage';
+
 
 
 
@@ -113,6 +115,8 @@ const MyComponent = () => {
 
 
 const Resultado = () => {
+
+  useProtectedPage()
   
   //teste
   const params = useParams()

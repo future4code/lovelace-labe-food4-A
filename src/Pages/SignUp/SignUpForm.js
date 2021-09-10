@@ -11,7 +11,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 const SignUpForm = ({setRightButtonText}) => {
   const history = useHistory()
-  const [form, onChange, clear] = useForm({ name: '', email: '',cpf: '', password: '',password: '' })
+  const [form, onChange, clear] = useForm({ name: "", email: "",cpf: "", password: ""})
   const [isLoading, setIsLoading] = useState(false)
 
   const onSubmitForm = (event) => {
@@ -41,49 +41,49 @@ const SignUpForm = ({setRightButtonText}) => {
         <InputsContainer>
           <TextField
             value={form.name}
-            name={'name'}
+            name={"name"}
             onChange={onChange}
-            label={'Nome'}
-            variant={'outlined'}
+            label={"Nome"}
+            variant={"outlined"}
             fullWidth
             required
             autoFocus
-            margin={'normal'}
+            margin={"normal"}
           />
           <TextField
             value={form.email}
-            name={'email'}
+            name={"email"}
             onChange={onChange}
-            label={'E-mail'}
-            variant={'outlined'}
-            type={'email'}
+            label={"E-mail"}
+            variant={"outlined"}
+            type={"email"}
             fullWidth
             required
-            margin={'normal'}
+            margin={"normal"}
           />
             <TextField
             value={form.cpf}
-            name={'cpf'}
+            name={"cpf"}
             onChange={onChange}
-            label={'cpf'}
-            variant={'outlined'}
-            type={'cpf'}
+            label={"cpf"}
+            variant={"outlined"}
+            type={"cpf"}
             fullWidth
             required
-            margin={'normal'}
+            margin={"normal"}
           />
           <TextField
             value={form.password}
-            name={'senha'}
+            name={"password"}
             onChange={onChange}
-            label={'Senha'}
-            variant={'outlined'}
-            type={'password'}
+            label={"Senha"}
+            variant={"outlined"}
+            type={"password"}
             fullWidth
             required
-            margin={'normal'}
+            margin={"normal"}
           />
-               <TextField
+               {/* <TextField
             value={form.password}
             name={'senha2'}
             onChange={onChange}
@@ -93,7 +93,7 @@ const SignUpForm = ({setRightButtonText}) => {
             fullWidth
             required
             margin={'normal'}
-          />
+          /> */}
         </InputsContainer>
         <Button
           color={'primary'}

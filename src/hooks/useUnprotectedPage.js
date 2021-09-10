@@ -9,7 +9,7 @@ const useUnprotectedPage = () => {
     if (token){
       goToRecipesList(history)
     }
-  }, [history])
+  },[history])
 }
 
 export default useUnprotectedPage

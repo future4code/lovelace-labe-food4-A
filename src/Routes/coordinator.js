@@ -3,7 +3,7 @@ export const goToLogin = (history) => {
 }
 
 export const goToSignUp = (history) => {
-    history.push("/signUp")
+    history.push("/signup")
 }
 
 export const goToRecipesList = (history) => {
@@ -11,24 +11,24 @@ export const goToRecipesList = (history) => {
 }
 
 export const goToAsiaticas = (history) => {
-    history.push ("/categorias/assiaticas")
+    history.push("/categorias/assiaticas")
 }
 
 export const goToCategorias = (history,id) => {
-    history. push (`/categorias/${id}`)
+    history. push(`/categorias/${id}`)
 }
 
 
 export const goToCart = (history) => {
-    history. push ("/carrinho")
+    history.push("/carrinho")
 }
 
 export const goToPerfil = (history) => {
-    history. push ("/meuPerfil")
+    history.push("/meuPerfil")
 }
 
 export const goToFiltroRestaurante = (history) => {
-    history. push ("/filtro/restaurante")
+    history.push("/filtro/restaurante")
 }
 
 
