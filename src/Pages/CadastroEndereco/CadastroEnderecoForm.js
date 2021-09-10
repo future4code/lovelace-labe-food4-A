@@ -18,7 +18,7 @@ import {goToRecipesList} from "../../Routes/coordinator"
 //   const token = localStorage.setItem("token")
 //   axios.put(`${BASE_URL}/address`, { 
 //     headers: {
-//     auth: token
+//     auth: token ... teste
 //     },
 //     })
 //     .then((res) => {
