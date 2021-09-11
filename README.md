@@ -8,6 +8,6 @@ Integrantes:
 - Thayane Pita Silva Bittencourt
 
 Login para acessar o site: 
--e-mail: eu@eu.com
--senha:  123456
+e-mail: eu@eu.com
+senha:  123456
 
