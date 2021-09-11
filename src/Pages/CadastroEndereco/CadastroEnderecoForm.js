@@ -1,39 +1,14 @@
 import React, {useState} from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { InputsContainer, SignUpFormContainer } from './style'
 import { useHistory } from 'react-router-dom'
 import useForm from "../../hooks/useform"
 import {AddAdress} from "../../services/user"
 import logo from "../../assets/logo.png"
 import { LogoImage } from './style'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import axios from "axios"
-import {BASE_URL} from "../../constants/urls"
-import {goToRecipesList} from "../../Routes/coordinator"
 
 
-
-// const AddAdress =(body, clear, history, setRightButtonText, setIsLoading)=>{
-//   const token = localStorage.setItem("token")
-//   axios.put(`${BASE_URL}/address`, { 
-//     headers: {
-//     auth: token ... teste
-//     },
-//     })
-//     .then((res) => {
-//         console.log("Endereço :",res)
-//         //localStorage.setItem("token", res.data.token)
-//         clear()
-//         setIsLoading(false)
-//         goToRecipesList(history)
-        
-//   })
-//   .catch((err) => {
-//       console.log("erro no cadastro de endereço",err)
-      
-//   })
-// }
 
 
 const CadastroEnderecoForm = ({setRightButtonText}) => {
@@ -58,7 +33,7 @@ const CadastroEnderecoForm = ({setRightButtonText}) => {
           value={form.street}
           name={"street"}
           onChange={onChange}
-          label={"Rua"}
+          label={"Rua / Avenida"}
           variant={"outlined"}
           fullWidth
           required
@@ -69,7 +44,7 @@ const CadastroEnderecoForm = ({setRightButtonText}) => {
           value={form.number}
           name={"number"}
           onChange={onChange}
-          label={"numero"}
+          label={"Número"}
           variant={"outlined"}
           type={"number"}
           fullWidth
@@ -100,34 +75,34 @@ const CadastroEnderecoForm = ({setRightButtonText}) => {
         />
              <TextField
           value={form.state}
-          name={'state'}
+          name={"state"}
           onChange={onChange}
-          label={'Estado'}
-          variant={'outlined'}
-          type={'text'}
+          label={"Estado"}
+          variant={"outlined"}
+          type={"text"}
           fullWidth
           required
-          margin={'normal'}
+          margin={"normal"}
         />
 
 
           <TextField
           value={form.complement}
-          name={'complement'}
+          name={"complement"}
           onChange={onChange}
-          label={'Complemento'}
-          variant={'outlined'}
-          type={'text'}
+          label={"Complemento"}
+          variant={"outlined"}
+          type={"text"}
           fullWidth
-          margin={'normal'}
+          margin={"normal"}
         />
 
 
       </div>
       <Button
-        color={'primary'}
-        variant={'contained'}
-        type={'submit'}
+        color={"primary"}
+        variant={"contained"}
+        type={"submit"}
         fullWidth
       >
         {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Salvar</>}

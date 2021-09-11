@@ -6,6 +6,11 @@ export const goToSignUp = (history) => {
     history.push("/signup")
 }
 
+
+export const goToAdress = (history) => {
+    history.push("/cadastro")
+}
+
 export const goToRecipesList = (history) => {
     history.push("/")
 }

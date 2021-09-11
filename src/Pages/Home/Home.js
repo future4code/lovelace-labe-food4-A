@@ -18,7 +18,6 @@ import { goToCategorias } from '../../Routes/coordinator'
 import { goToFiltroRestaurante } from '../../Routes/coordinator'
 import useProtectedPage from '../../hooks/useProtectedPage'
 
-=======
 import { Scrow } from './styled'
 
 
