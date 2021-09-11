@@ -6,11 +6,12 @@ import Filtro from '../Pages/Filtro/Filtro'
 import Resultado from '../Pages/Resultado/Resultado'
 import Carrinho from '../Pages/Carrinho/Carrinho'
 import MeuPerfil from '../Pages/MeuPerfil/MeuPerfil'
-import CadastroEndereco from '../Pages/CadastroEndereco/CadastroEndereco'
+import CadastroPage from '../Pages/CadastroEndereco/CadastroPage'
 import Error from '../Pages/Error/Error'
 import LoginPage from '../Pages/Login/LoginPage'
 import Categorias from '../Pages/Home/Categorias/Categoria'
 import FiltroRestaurante from '../Pages/Home/FiltroRestaurante/FiltroRestaurante'
+
 
 const Router = () => {
     //const [teste,setTest]=useState([])
@@ -46,8 +47,8 @@ const Router = () => {
                     <MeuPerfil />
                 </Route>
 
-                <Route exact path={"/cadastroeEndereco"}>
-                    <CadastroEndereco />
+                <Route exact path={"/cadastro"}>
+                    <CadastroPage />
                 </Route>
 
                 <Route exact path={"/categorias/:id"}>

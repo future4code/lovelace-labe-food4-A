@@ -33,6 +33,8 @@ const SignUpForm = ({setRightButtonText}) => {
   //       senha2.onkeyup= validatePassword;
 
   //     }
+
+  
   return (
     <form onSubmit={onSubmitForm}>
       <SignUpFormContainer>
