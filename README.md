@@ -7,6 +7,9 @@ Integrantes:
 - Camila Goulart Soares
 - Thayane Pita Silva Bittencourt
 
+Link surge:
+- https://meek-discussion.surge.sh/login
+
 Login para acessar o site: 
 - e-mail: eu@eu.com
 - senha:  123456
