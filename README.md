@@ -1,17 +1,17 @@
-#Rappi4A
+Rappi4A
 
-###Integrantes: 
+Integrantes: 
 - Elias Silva de Sousa
 - Guilherme Augusto de Almeida Amaral
 - Doglas Viegas De Menezes
 - Camila Goulart Soares
 - Thayane Pita Silva Bittencourt
 
-####Login para acessar o site: 
-.e-mail: eu@eu.com
-.senha:  123456
+Login para acessar o site: 
+- e-mail: eu@eu.com
+- senha:  123456
 
-####Fotos site:
+Fotos site:
 ![carrinho](https://user-images.githubusercontent.com/85360804/132992809-ff91d16c-37ce-4bc6-a120-c14b7e8169c5.png)
 ![login](https://user-images.githubusercontent.com/85360804/132992812-9ce2815b-1b08-4d53-b852-3321fa573c3c.png)
 ![print1](https://user-images.githubusercontent.com/85360804/132992813-8830b77b-e1b7-4027-875c-449853a42a8b.png)
