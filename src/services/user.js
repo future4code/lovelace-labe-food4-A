@@ -68,21 +68,28 @@ export const AddAdress =(body, clear, history, setRightButtonText, setIsLoading)
       })
     }
 
-//   export const getRestaurants =()=>{
-//     const token = localStorage.getItem("token")
-//     axios.get(`${BASE_URL}/restaurants`, { 
-//       headers: {
-//       auth: token
-//       },
-//       })
 
-//       .then((res) => {
-//           console.log("olha",res)
+    //Requisição para o carrinho
+
+    export const pegaProdutos = (body) => {
+        const token = localStorage.getItem("token")
+      axios.post(`${BASE_URL}/restaurants/1/order`,body,{
+
+        headers: {
+        auth: token
+        },
+        })
+        
+        .then((res) => {
+            console.log("Pedido :",res)
+            
+      })
+      .catch((err) => {
+          console.log("Erro na solicitação do pedido",body)
           
-//     })
-//     .catch((err) => {
-//         console.log("deu b.o",err)
-//     })
-//   }
+      })
+    }
+
+
 
 
