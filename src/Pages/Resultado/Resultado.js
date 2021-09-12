@@ -36,11 +36,34 @@ import { useParams } from 'react-router-dom';
 
 import useProtectedPage from '../../hooks/useProtectedPage';
 
+//teste dqui p baixo
+import Carrinho from '../Carrinho/Carrinho';
+import useForm from "../../hooks/useform"
+import CircularProgress from '@material-ui/core/CircularProgress'
+
+
+import { goToCart } from '../../Routes/coordinator';
+
 
 
 
 //container/conteúdo/configurações do modal
-const MyComponent = () => {
+const MyComponent = (setRightButtonText) => {
+
+    //parametros para o formulário
+  const history = useHistory()
+    const [form, onChange, clear] = useForm({ id: "", quantity: ""})
+    const [isLoading, setIsLoading] = useState(false)
+  
+    //parametros de envio formulario
+    const onSubmitForm = (event) => {
+      event.preventDefault()
+      Carrinho(form, clear, history, setRightButtonText, setIsLoading)
+  
+      }
+      
+      
+      //lógica do modal
   const { isModalOpen, openModal, closeModal } = useModal();
   return (
     <EstilzaModal>
@@ -51,57 +74,50 @@ const MyComponent = () => {
           transition={ModalTransition.SCALE}
         >
           <button onClick={closeModal}>X</button>
-          <h5>Selecione a quantidade desejada</h5>
-
-
-
-          <TextField
           
+
+      {/* //formulário no modal */}
+          <form onSubmit={onSubmitForm}>
+        <div>
+        
+              <b>SELECIONE A QUANTIDADE DESEJADA</b>
+          <div>
+            
+        <TextField
+          id="standard-select-currency"
+          value={form.quantity}
+          name={"quantity"}
+          type={"number"}
           select
-          
-          
-          // name={"email"}
-                        // value={form.email}
-                        // onChange={onChange}
-                        // label={"E-mail"}
-                        variant={"outlined"}
-                        fullWidth
-                        margin={"normal"}
-                        // required
-                        // type={"email"}
-          //onChange={handleChange}
-         
-          //helperText="Please select your currency"
-
-          
-        >
-          
-        <option value={1}>1</option>
-        <option value={2}>2</option>
-        <option value={3}>3</option>
-        <option value={4}>4</option>
-        <option value={5}>5</option>
-        <option value={6}>6</option>
-        <option value={7}>7</option>
-        <option value={8}>8</option>
-        <option value={9}>9</option>
-        <option value={10}>10</option>
-
-
-
-          </TextField>
-
-
-
-
-        <Button
-          type={"submit"}
+          label="Produtos"
+          //value={}}
           fullWidth
-          variant={"contained"}
-          color={"primary"}
+          variant={"outlined"}
+          onChange={onChange}
+          margin={"normal"}
+          required
+          helperText="Adicione a quantidade"
+        >
+          <option value="0">1</option>
+          <option value="0">2</option>
+          <option value="0">3</option>
+          <option value="0">4</option>
+          <option value="0">5</option>
+        </TextField>
+
+</div>
+          <Button
+            color={"primary"}
+            variant={"contained"}
+            type={"submit"}
+            onClick={ () => goToCart(history)}
+            fullWidth
           >
-          ADICIONAR AO CARRINHO
-        </Button>
+            
+            {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Adicionar ao carrinho</>}
+          </Button>
+          </div>
+      </form>
 
 
 
